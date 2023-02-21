@@ -9,7 +9,7 @@ function Layout() {
   let registro = [
     { tipo : "medico", fecha: "24 / feb"},
     { tipo : "vacuna", fecha: "3 / mar"},
-    { tipo : "medico", fecha: "3 / mar"}
+    { tipo : "medico", fecha: "27 / mar"}
   ]
   return (
     <div className='container-layout'>
