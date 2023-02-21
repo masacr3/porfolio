@@ -1,0 +1,21 @@
+.menu-off-decoration{
+    text-decoration: none;
+}
+
+.menu-box{
+    border: 1px solid rgba(255, 255, 255, 0.92);
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+}
+
+.menu-box-not-visible{
+    width: 0;
+    display: none;
+    transition: all 0.4s;
+}
