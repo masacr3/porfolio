@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import axios from 'axios'
 import Contenedor from '../contenedor/Contenedor'
 import Logo from '../logo/Logo'
 import Nvar from '../nvar/Nvar'
 import './Layout.css'
 import MedicalCard from '../medicalCard/MedicalCard'
 import FiubaCard from '../fiubaCard/FiubaCard'
+import Login from '../login/Login'
 
 
 function Layout() {
@@ -37,6 +39,16 @@ function Layout() {
     }
   ]
 
+  useEffect( () =>{
+    axios.post("http://localhost:3000/token")
+        .then(res => {
+            console.log("Obteniendo Token")
+            localStorage.setItem('token', res.data.token)
+        })
+  },[])
+
+  
+
   return (
     <div className='container-layout'>
         <Nvar />
@@ -46,6 +58,7 @@ function Layout() {
         </Contenedor>
         <MedicalCard registros={registro} />
         <FiubaCard registros={infoFacultad}/>
+        {/* <Login /> */}
     </div>
   )
 }
