@@ -39,13 +39,13 @@ function Layout() {
     }
   ]
 
-  useEffect( () =>{
-    axios.post("http://localhost:3000/token")
-        .then(res => {
-            console.log("Obteniendo Token")
-            localStorage.setItem('token', res.data.token)
-        })
-  },[])
+  // useEffect( () =>{
+  //   axios.post("http://localhost:3000/token")
+  //       .then(res => {
+  //           console.log("Obteniendo Token")
+  //           localStorage.setItem('token', res.data.token)
+  //       })
+  // },[])
 
   
 
@@ -58,7 +58,7 @@ function Layout() {
         </Contenedor>
         <MedicalCard registros={registro} />
         <FiubaCard registros={infoFacultad}/>
-        {/* <Login /> */}
+        <Login />
     </div>
   )
 }

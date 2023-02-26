@@ -5,40 +5,30 @@ import axios from 'axios'
 function Login() {
 
   const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
-  const handlerInput = (e) =>{
-    setEmail(e.target.value)
-  }
-
-  const handlerSubmit = (e) =>{
-    e.preventDefault()
-  }
-
-  const submitBoton = (e) =>{
-    const config = {
-        headers : {
-            'Authorization' : 'Bearer ' + localStorage.getItem('token')
-        }
-    }
-
-    axios.get("http://localhost:3000/private", config)
-        .then(res => {
-            console.log( res.data )
-        })
+  const submitBoton = () =>{
+    axios.post("http://localhost:3333/token", { email, password })
+      .then(res => console.log(res.data.token, res.data.role))
   }
 
   return (
     <div className='container-login'>
-        <div className='item-login jc-c'>JWT SESSION</div>
+        <div className='item-login jc-c'>Login</div>
         <div className='item-login jc-sa m20'>
-            <form onSubmit={e => handlerSubmit(e)}>
+            <form onSubmit={e => e.preventDefault()}>
                 <input 
                     type="text" 
                     placeholder='email' value={email}
-                    onChange={e => handlerInput(e)}
+                    onChange={e => setEmail(e.target.value)}
                     />
+                <input 
+                  type="text"
+                  placeholder='pass' value={password}
+                  onChange={e => setPassword(e.target.value)}
+                />
             </form>
-            <button type='submit' onClick={e => submitBoton(e)}>Enviar</button>
+            <button type='submit' onClick={submitBoton}>Enviar</button>
         </div>
         
     </div>

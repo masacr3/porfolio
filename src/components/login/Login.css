@@ -22,7 +22,7 @@
 
 .item-login{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     box-sizing: border-box;
     text-align: center;
@@ -51,4 +51,35 @@
 .item-login.m20{
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 150px;
+}
+
+form input{
+    box-sizing: border-box;
+    height: 30px;
+    width: 180px;
+    background-color: transparent;
+    outline: none;
+    color:blueviolet
+}
+
+form input:focus{
+    border-bottom: 1px solid violet;
+    border-right: 1px solid violet;
+}
+
+.item-login button{
+    height: 30px;
+    width: 180px;
+    background-color: transparent;
+    border: 1px solid violet;
+    border-radius: 6px;
+    color: violet;
 }
