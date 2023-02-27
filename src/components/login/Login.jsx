@@ -1,21 +1,39 @@
 import React, { useState } from 'react'
 import './Login.css'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import Flash from '../flash/Flash'
 
 function Login() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [response, setResponse] = useState('')
+  const [consulto, setConsulto] = useState(false)
+
+  const navigateTo = useNavigate()
 
   const submitBoton = () =>{
     axios.post("http://localhost:3333/token", { email, password })
-      .then(res => console.log(res.data.token, res.data.role))
+      .then(res => {
+        if (res.data.role === "invitado"){
+          setResponse(false)
+          setConsulto(true)
+          localStorage.clear()
+          setResponse('error')
+          setTimeout( () => setConsulto(false), 2000)
+        }
+        else{
+          localStorage.setItem('token', res.data.token)
+          navigateTo("/home")
+        }
+      })
   }
 
   return (
     <div className='container-login'>
         <div className='item-login jc-c'>Login</div>
-        <div className='item-login jc-sa m20'>
+        <div className='item-login jc-sa'>
             <form onSubmit={e => e.preventDefault()}>
                 <input 
                     type="text" 
@@ -30,7 +48,12 @@ function Login() {
             </form>
             <button type='submit' onClick={submitBoton}>Enviar</button>
         </div>
-        
+        <div className="item-logic jc-c">
+            {consulto && 
+                <Flash estado={response}>
+                    Usuario invalido
+                </Flash>}
+        </div>
     </div>
   )
 }

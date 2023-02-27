@@ -82,4 +82,5 @@ form input:focus{
     border: 1px solid violet;
     border-radius: 6px;
     color: violet;
+    margin-bottom: 10px;
 }
