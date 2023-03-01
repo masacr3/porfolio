@@ -8,11 +8,6 @@ import TodoList from '../todoList/TodoList'
 import { useEffect } from 'react'
 
 function Layout() {
-  
-  let articulos = ['papa','leche','nose']
-
-  useEffect( () => localStorage.setItem("listaArticulos", JSON.stringify(articulos)), [])
-
 
   let registro = [
     { tipo : "vacuna", fecha: "3 / mar"},

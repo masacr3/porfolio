@@ -6,18 +6,10 @@ import './TodoList.css'
 
 function TodoList() {
   
-//   var articulos = localStorage.getItem('listaArticulos')
-//   articulos = JSON.parse(articulos)
-//   console.log(articulos)
   const [lista, setLista] = useState([])
   const [inputAdd, setInputAdd] = useState('')
   const [visible, setVisible] = useState(false)
   
-
-  // useEffect( () =>{
-  //   let arr = ['diarco', 'bulogne', 'mataderos']
-  //   localStorage.setItem('arraysDb', JSON.stringify(arr))
-  // },[])
 
   const handleAgregar = () =>{
 
@@ -53,23 +45,34 @@ function TodoList() {
       ,[])
 
     const agregarDB = () =>{
-      setDatadb([...datadb, inputMenu])
+      if(inputMenu === "") return
+      let data = {
+        id : uuidv4(),
+        db : inputMenu
+      }
+      setDatadb([...datadb, data])
       let databases = localStorage.getItem('arraysDb')
       databases = JSON.parse(databases)
-      let newDb = [ ...databases , inputMenu]
+      let newDb = [ ...databases , data]
 
       localStorage.setItem('arraysDb', JSON.stringify(newDb))
       setInputMenu('')
 
     }
 
+    const handlerEliminarMenu = (id) =>{
+      setDatadb( datadb.filter(item => item.id !== id))
+      let newDb = datadb.filter(item => item.id !== id)
+      localStorage.setItem('arraysDb', JSON.stringify(newDb))
+    }
+
     return (
       <div className='menu-container'>
-        {datadb.map((db,i) => <div className='menu jc-saa' key={i}>
-          <p>{db}</p>
+        {datadb.map(data => <div className='menu jc-saa' key={data.id}>
+          <p>{data.db}</p>
           <div className="opt">
             <button className='mr-30'>Usar</button>
-            <button>Eliminar</button>
+            <button onClick={e => handlerEliminarMenu(data.id)}>Eliminar</button>
           </div>
         </div>)}
         <div className='menu jc-c'>

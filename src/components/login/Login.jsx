@@ -14,20 +14,24 @@ function Login() {
   const navigateTo = useNavigate()
 
   const submitBoton = () =>{
-    axios.post("http://localhost:3333/token", { email, password })
-      .then(res => {
-        if (res.data.role === "invitado"){
-          setResponse(false)
-          setConsulto(true)
-          localStorage.clear()
-          setResponse('error')
-          setTimeout( () => setConsulto(false), 2000)
-        }
-        else{
-          localStorage.setItem('token', res.data.token)
-          navigateTo("/home")
-        }
-      })
+    // axios.post("http://localhost:3333/token", { email, password })
+    //   .then(res => {
+    //     if (res.data.role === "invitado"){
+    //       setResponse(false)
+    //       setConsulto(true)
+    //       localStorage.clear()
+    //       setResponse('error')
+    //       setTimeout( () => setConsulto(false), 2000)
+    //     }
+    //     else{
+    //       localStorage.setItem('token', res.data.token)
+    //       navigateTo("/home")
+    //     }
+    //   })
+    
+    //desactivated AUTH for moments
+    localStorage.setItem('token', "asdaaAJlsdJAsd")
+    navigateTo("/home")
   }
 
   return (
