@@ -1,0 +1,134 @@
+.box-container{
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.jc-c{
+    justify-content: center;
+}
+
+.jc-sa{
+    justify-content: space-between;
+}
+
+.jc-saa{
+    justify-content: space-around;
+}
+
+.jc-end{
+    justify-content: end;
+}
+
+.item:first-of-type{
+    background-color: rgba(255, 255, 255, 0.08);
+    border-bottom: none;
+}
+
+.menu-container{
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.menu{
+    background-color: rgba(255, 255, 255, 0.08);
+    border: none;
+
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.menu .opt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item:last-of-type{
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom: none;
+}
+
+.item.jc-sa .opt button{
+    margin-right: 30px;
+}
+
+.pa{
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.mr-30{
+    margin-right: 10px;
+}
+
+.item input, .menu input{
+    box-sizing: border-box;
+    height: 30px;
+    width: 180px;
+    background-color: transparent;
+    outline: none;
+    color:blueviolet;
+    margin-right: 20px;
+    border-top: none;
+    border-left: none;
+}
+
+.item input:focus, .menu input:focus{
+    border-bottom: 1px solid violet;
+    border-right: 1px solid violet;
+}
+
+.item button{
+    background-color: transparent;
+    border: 1px solid violet;
+    border-radius: 6px;
+    color: violet;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.menu button{
+    background-color: transparent;
+    border: 1px solid violet;
+    border-radius: 6px;
+    color: violet;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
