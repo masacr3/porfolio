@@ -5,6 +5,8 @@
     flex-direction: column;
 }
 
+.container-nvar .row {background-color: transparent;}
+
 .container-nvar-link{
     width: 100%;
     display: flex;

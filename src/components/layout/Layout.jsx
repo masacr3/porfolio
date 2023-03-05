@@ -6,22 +6,26 @@ import MedicalCard from '../medicalCard/MedicalCard'
 import FiubaCard from '../fiubaCard/FiubaCard'
 import TodoList from '../todoList/TodoList'
 import { useEffect } from 'react'
+import Materias from '../materias/Materias'
 
 function Layout() {
 
   let registro = [
-    { tipo : "vacuna", fecha: "3 / mar"},
     { tipo : "medico", fecha: "27 / mar"}
   ]
 
   let infoFacultad = [
     {
-      fecha : "02 / mar",
-      descripcion : "🔥 Prioridad (98) 14:30h",
-    },
-    {
       fecha : "13 / mar",
       descripcion : "Inicio de clases."
+    }
+  ]
+
+  let infoMaterias = [
+    {
+      materia : 'Analisis Matematico',
+      fecha : 'martes - jueves',
+      horario : '14 - 16 ~ 16 - 18'
     }
   ]
   
@@ -34,7 +38,7 @@ function Layout() {
         </Contenedor>
         <MedicalCard registros={registro} />
         <FiubaCard registros={infoFacultad}/>
-        <TodoList />
+        {/* <Materias listadoMaterias={infoMaterias}/> */}
     </div>
   )
 }

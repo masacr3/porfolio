@@ -1,0 +1,28 @@
+.item.jc-sb .opt button {
+    margin-left: 15px;
+}
+
+.item.jc-sb{
+    justify-content: space-between;
+}
+
+.row.item.jc-c, .row.item.grid{
+    background-color: transparent;
+}
+
+.row.item.extract{
+    margin: 20px;
+    box-shadow:  1px 0px 13px 8px rgb(50 56 62 / 82%);
+    padding: 16px;
+}
+
+.row.item.title{
+    background-color: transparent;
+}
+
+.row.item.extract.jc-c input {
+    border-right: none;
+}
+
+
+

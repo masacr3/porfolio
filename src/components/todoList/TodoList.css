@@ -132,3 +132,11 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.focus{
+    background-color: rgba(255, 255, 255, 0.20);
+}
+
+.tachado{
+    color: #5D6D7E;
+}
