@@ -140,3 +140,16 @@
 .tachado{
     color: #5D6D7E;
 }
+
+.header{
+    color: rgba(255, 255, 255, 0.08);
+    font-size: 15px;
+}
+
+.header p{
+    color: #566573;
+}
+
+.header p span {
+    color: white;
+}

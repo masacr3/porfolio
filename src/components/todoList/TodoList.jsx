@@ -15,25 +15,32 @@ function TodoList() {
   const [isActived, setIsActived] = useState(true)
 
   return (
-    <div className='box-container'>
-      <TodoMenu 
-        elegirDb={setEligioDb} 
-        databd={db}
-        getdb={setDb}
-        datacurrent={dbcurrent}
-        getcurrent={setDbcurrent}
-        activado={setIsActived} 
-        />
-      { eligioDb && !isActived && 
-        <TodoGrid 
-          eligioDb={eligioDb}
+    <div className='todolist-container'>
+      <div className='header'>
+        <p> <span>💖</span>Con mucho amor para 
+        el mejor papa del mundo <span>🌎</span></p> 
+      </div>
+      <div className='box-container'>
+        <TodoMenu 
+          elegirDb={setEligioDb} 
           databd={db}
           getdb={setDb}
           datacurrent={dbcurrent}
           getcurrent={setDbcurrent}
-          /> 
-        }
+          activado={setIsActived} 
+          />
+        { eligioDb && !isActived && 
+          <TodoGrid 
+            eligioDb={eligioDb}
+            databd={db}
+            getdb={setDb}
+            datacurrent={dbcurrent}
+            getcurrent={setDbcurrent}
+            /> 
+          }
+      </div>
     </div>
+    
   )
 }
 
