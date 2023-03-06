@@ -5,6 +5,7 @@ import Hamburger from 'hamburger-react'
 import './TodoList.css'
 import TodoMenu from '../todoListMenu/todoMenu'
 import TodoGrid from '../todoGrid/TodoGrid'
+import Footer from '../footer/Footer'
 
 
 function TodoList() {
@@ -39,6 +40,7 @@ function TodoList() {
             /> 
           }
       </div>
+      <Footer />
     </div>
     
   )

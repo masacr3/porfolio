@@ -7,6 +7,7 @@ import FiubaCard from '../fiubaCard/FiubaCard'
 import TodoList from '../todoList/TodoList'
 import { useEffect } from 'react'
 import Materias from '../materias/Materias'
+import Footer from '../footer/Footer'
 
 function Layout() {
 
@@ -38,6 +39,7 @@ function Layout() {
         </Contenedor>
         <MedicalCard registros={registro} />
         <FiubaCard registros={infoFacultad}/>
+        <Footer />
         {/* <Materias listadoMaterias={infoMaterias}/> */}
     </div>
   )
